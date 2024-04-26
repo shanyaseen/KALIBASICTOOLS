@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Update package lists
+sudo apt-get update
+
+# Install dependencies
+sudo apt-get install -y git python3-pip python3-dev libssl-dev libffi-dev build-essential
+
+# Install Storm Breaker
+git clone https://github.com/stamparm/DSXploit.git
+cd DSXploit
+sudo pip3 install -r requirements.txt
+sudo python3 setup.py install
+cd ..
+
+# Install Sherlock
+sudo pip3 install sherlock
+
+# Install DNSRecon
+sudo gem install dnsrecon
+
+# Install Recon-ng
+sudo gem install recon-ng
+
+# Install Grecon
+sudo pip3 install grecon
+
+# Install WhatWeb
+sudo gem install whatweb
+
+# Install Subfinder
+go get -u github.com/projectdiscovery/subfinder/cmd/subfinder
